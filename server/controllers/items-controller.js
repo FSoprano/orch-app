@@ -1,7 +1,7 @@
 // orch-app/server/controllers/items-controller.js
 
 // Import the database
-const knex = require('../db/database.sqlite')
+const knex = require('./../db');
 
 // Retrieve all members
 exports.membersAll = async (req, res) => {
@@ -61,7 +61,7 @@ exports.memberDelete = async (req, res) => {
   }  
 
 // Remove all members from the database
-exports.memberClearAll = async (req, res) => {
+exports.membersClearAll = async (req, res) => {
   knex
     .select('*') // select all records
     .from('members') // from 'books' table

@@ -1,10 +1,10 @@
 // orch-app/server/db.js
 
 // Import path module
-const path = require('path')
+const path = require('path');
 
 // Get the location of database.sqlite file
-const dbPath = path.resolve(__dirname, 'db/database.sqlite')
+const dbPath = path.resolve(__dirname, 'db/database.sqlite3')
 
 // Create connection to SQLite database
 const knex = require('knex')({
