@@ -7,7 +7,7 @@ import React from 'react';
 import { MemberListRow } from './member-list-row';
 
 // Import styles
-import './../styles/member-list.css'
+import './../styles/members.css'
 
 // Create interfaces
 interface MemberUI {
@@ -44,10 +44,10 @@ export const MemberList = (props: MemberListUI) => {
             <th className="table-head-item">Vorname</th>
 
             <th className="table-head-item">Strasse</th>
-
-            <th className="table-head-item">Rating</th>
             
             <th className="table-head-item">PLZ</th>
+
+            <th className="table-head-item">Ort</th>
             
             <th className="table-head-item">Festnetz</th>
             

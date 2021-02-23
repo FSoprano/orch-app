@@ -14,10 +14,9 @@ interface MemberListRowUI {
     ort: string;
     fnetz: string;
     mobil: string;
-    email: string;    
-    }
-    handleMemberRemove: (id: number, name: string) => void;
-  
+    email: string;
+    };
+    handleMemberRemove: (id: number, name: string) => void;  
   }
 
 // Create MemberListRow component
@@ -53,8 +52,13 @@ export const MemberListRow = (props: MemberListRowUI) => (
     </td>
     
     <td className="member-table-item">
+      {props.member.mobil}
+    </td>
+    
+    <td className="member-table-item">
       {props.member.email}
     </td>
+
     
     <td className="member-table-item">
       <button

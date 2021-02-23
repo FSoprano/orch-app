@@ -76,7 +76,7 @@ export const Members = () => {
 
         // Fetch all members to refresh
         // the members on the list
-        fetchBooks();
+        fetchMembers();
       })
       .catch(error => console.error(`There was an error creating member ${name}: ${error}`));
   }
@@ -105,8 +105,8 @@ export const Members = () => {
 
         // Fetch all members to refresh
         // the members on the bookshelf list
-        fetchBooks();
-      });
+        fetchMembers();
+      })
       .catch(error => console.error(`There was an error removing member ${name}: ${error}`));
   }
   
@@ -124,7 +124,7 @@ export const Members = () => {
   
   return (
     <div className="member-list-wrapper">
-      {/* Form for creating new book */}
+      {/* Form for creating new member */}
       <div className="member-list-form">
         <div className="form-wrapper" onSubmit={handleMemberSubmit}>
           <div className="form-row">
@@ -146,55 +146,53 @@ export const Members = () => {
             </fieldset>
             
             <fieldset>
-              <label className="form-label" htmlFor="email">E-Mail:</label>
-              <input className="form-input" type="text" id="email" name="email" value={xyz@example.com} onChange={(e) => setEmail(e.currentTarget.value)} />
-            </fieldset>
-
-          </div>
-        </div>
-        
-        <div className="form-row">
-            <fieldset>
               <label className="form-label" htmlFor="plz">PLZ:</label>
               <input className="form-input" type="text" id="plz" name="plz" value={plz} onChange={(e) => setPlz(e.currentTarget.value)} />
             </fieldset>
 
+          </div>
+        </div>
+        
+        <div className="form-row">
+            
             <fieldset>
               <label className="form-label" htmlFor="ort">Ort:</label>
               <input className="form-input" type="text" id="ort" name="ort" value={ort} onChange={(e) => setOrt(e.currentTarget.value)} />
+            </fieldset>
+            
+            <fieldset>
+              <label className="form-label" htmlFor="fnetz">Festnetz:</label>
+              <input className="form-input" type="text" id="fnetz" name="fnetz" value={fnetz} onChange={(e) => setFnetz(e.currentTarget.value)} />
             </fieldset>
           </div>
         </div>
         
         <div className="form-row">
-            <fieldset>
-              <label className="form-label" htmlFor="fnetz">Festnetz:</label>
-              <input className="form-input" type="text" id="fnetz" name="fnetz" value={fnetz} onChange={(e) => setFnetz(e.currentTarget.value)} />
-            </fieldset>
-
+            
             <fieldset>
               <label className="form-label" htmlFor="mobil">Handy:</label>
-              <input className="form-input" type="text" id="mobil" name="mobil" value={0172-000000} onChange={(e) => setMobil(e.currentTarget.value)} />
+              <input className="form-input" type="text" id="mobil" name="mobil" value={mobil} onChange={(e) => setMobil(e.currentTarget.value)} />
             </fieldset>
+            
+            <fieldset>
+              <label className="form-label" htmlFor="email">E-Mail:</label>
+              <input className="form-input" type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.currentTarget.value)} />
+            </fieldset>
+            
+            
           </div>
-        </div>
+          
+        
+         <button onClick={handleMemberSubmit} className="btn btn-add">Add Member</button>
+          {/* Render member list component */}
+      <MemberList members={ members } loading={loading} handleMemberRemove={handleMemberRemove} />
 
-        <button onClick={handleMemberSubmit} className="btn btn-add">Add Member</button>
-      </div>
-      
-      {/* Render member list component */}
-      <MemberList members={members} loading={loading} handleMemberRemove={handleMemberRemove} />
-
-      {/* Show reset button if list contains at least one book */}
+      {/* Show reset button if list contains at least one member */}
       {members.length > 0 && (
-        <button className="btn btn-reset" onClick={handleListReset}>Reset List.</button>
+        <button className="btn btn-reset" onClick={handleListReset}>Reset List</button>
       )}
-    </div>
-  )
+      </div>
 
+      )
 
-
-
-
-  
-  }
+}

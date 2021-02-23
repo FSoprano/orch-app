@@ -24,14 +24,14 @@ exports.memberCreate = async (req, res) => {
   // Add member
   knex('members')
     .insert({
-        'Name': req.body.Name,
-        'Vorname': req.body.Vorname,
-        'Strasse': req.body.Strasse,
-        'PLZ': req.body.PLZ,
-        'Ort': req.body.Ort,
-        'Fnetz': req.body.Fnetz,
-        'Mobil': req.body.Mobil,
-        'Email': req.body.Email
+        'Name': req.body.name,
+        'Vorname': req.body.vorname,
+        'Strasse': req.body.strasse,
+        'PLZ': req.body.plz,
+        'Ort': req.body.ort,
+        'Fnetz': req.body.fnetz,
+        'Mobil': req.body.mobil,
+        'Email': req.body.email
       })
       .then(() => {
         // send success message in the response 
