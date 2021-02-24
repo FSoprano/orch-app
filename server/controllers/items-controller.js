@@ -12,6 +12,7 @@ exports.membersAll = async (req, res) => {
     .then(userData => {
       // send the members data in response object
       res.json(userData);
+      // console.log(userData);
       })
       .catch(err => {
         // send message in resp. object in case of an error
@@ -36,7 +37,8 @@ exports.memberCreate = async (req, res) => {
       .then(() => {
         // send success message in the response 
         res.json({ message: `Member ${req.body.Name} created.` })
-        })
+        //                                                    cons                                                                                ole.log(res);
+        })                                           
       .catch(err => {
         // Send error message in case of an error in the response
         res.json({ message: `There was an error creating member ${req.body.Name}: ${err}` })

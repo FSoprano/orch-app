@@ -13,7 +13,7 @@ const knex = require('knex')({
     filename: dbPath,
   },
   useNullAsDefault: true
-})
+})                                                                                   
 
 // Create a table in the database called "members"
 knex.schema
@@ -29,14 +29,14 @@ knex.schema
         // and increment "id" with every new record (member)
         return knex.schema.createTable('members', (table)  => {
           table.increments('id').primary()
-          table.string('Name')
-          table.string('Vorname')
-          table.string('Strasse')
-          table.string('PLZ')
-          table.string('Ort')
-          table.string('Fnetz')
-          table.string('Mobil')
-          table.string('Email')
+          table.string('name')
+          table.string('vorname')
+          table.string('strasse')
+          table.string('plz')
+          table.string('ort')
+          table.string('fnetz')
+          table.string('mobil')
+          table.string('email')
         })
         .then(() => {
           // Log success message
@@ -65,7 +65,7 @@ knex.schema
         // and increment "id" with every new record (date)
         return knex.schema.createTable('dates', (table)  => {
           table.increments('id').primary()
-          table.timestamp('Termine')
+          table.timestamp('termine')
         })
         .then(() => {
           // Log success message

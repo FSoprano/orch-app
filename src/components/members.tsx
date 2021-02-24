@@ -27,22 +27,22 @@ export const Members = () => {
   // Fetch all members on initial render
   useEffect(() => {
     fetchMembers()
-  }, []);
+  }, [])                                                                                                                           
   
   // function to retrieve all members
   // Fetch all books
-  const fetchMembers = async () => {
+  const fetchMembers = () => {
     // Send GET request to 'members/all' endpoint
-    axios
-      .get('http://localhost:4001/members/all')
+    axios.get('http://localhost:4001/members/all')
       .then(response => {
         // Update the books state
+        console.log(response.data);
         setMembers(response.data);
 
         // Update loading state
         setLoading(false);
       })
-      .catch(error => console.error(`There was an error retrieving the member list: ${error}`));
+      .catch(error => console.error(`There was an error retrieving the member list: ${error}`))
   }
   
   // Reset all input fields
@@ -125,6 +125,7 @@ export const Members = () => {
   return (
     <div className="member-list-wrapper">
       {/* Form for creating new member */}
+      
       <div className="member-list-form">
         <div className="form-wrapper" onSubmit={handleMemberSubmit}>
           <div className="form-row">
@@ -151,7 +152,7 @@ export const Members = () => {
             </fieldset>
 
           </div>
-        </div>
+      
         
         <div className="form-row">
             
@@ -165,7 +166,7 @@ export const Members = () => {
               <input className="form-input" type="text" id="fnetz" name="fnetz" value={fnetz} onChange={(e) => setFnetz(e.currentTarget.value)} />
             </fieldset>
           </div>
-        </div>
+    
         
         <div className="form-row">
             
@@ -178,21 +179,19 @@ export const Members = () => {
               <label className="form-label" htmlFor="email">E-Mail:</label>
               <input className="form-input" type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.currentTarget.value)} />
             </fieldset>
-            
-            
-          </div>
-          
-        
-         <button onClick={handleMemberSubmit} className="btn btn-add">Add Member</button>
+        </div>
+        <button onClick={handleMemberSubmit} className="btn btn-add">Eintragen</button>
+      </div>
+      
           {/* Render member list component */}
       <MemberList members={ members } loading={loading} handleMemberRemove={handleMemberRemove} />
 
       {/* Show reset button if list contains at least one member */}
       {members.length > 0 && (
-        <button className="btn btn-reset" onClick={handleListReset}>Reset List</button>
+        <button className="btn btn-reset" onClick={handleListReset}>Liste löschen</button>
       )}
-      </div>
-
+    </div>
+  </div>
       )
 
 }

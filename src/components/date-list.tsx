@@ -51,7 +51,7 @@ export const DateList = (props: DateListUI) => {
             )
           ) : (
             <tr className="table-row">
-              <td className="table-item" style={{ textAlign: 'center' }} colSpan={3}>No dates. Add one!</td>
+              <td className="table-item" style={{ textAlign: 'center' }} colSpan={3}>Noch keine Termine. Bitte eintragen</td>
             </tr>
           )
         }

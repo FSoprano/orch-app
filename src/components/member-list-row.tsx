@@ -64,7 +64,7 @@ export const MemberListRow = (props: MemberListRowUI) => (
       <button
         className="btn btn-remove"
         onClick={() => props.handleMemberRemove(props.member.id, props.member.name)}>
-        Remove Member
+        Entfernen
       </button>
     </td>
   </tr>

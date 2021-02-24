@@ -29,7 +29,7 @@ export const DateListRow = (props: DateListRowUI) => (
       <button
         className="btn btn-remove"
         onClick={() => props.handleDateRemove(props.date.id, props.date.termin)}>
-        Remove date
+        Termin entfernen
       </button>
     </td>
     
